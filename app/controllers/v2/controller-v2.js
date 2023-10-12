@@ -18,3 +18,27 @@ export let renderFoodList = (foodArr) => {
   });
   document.getElementById("tbodyFood").innerHTML = contenHTML;
 };
+
+export let getDataFrom = () => {
+  let ma = document.getElementById("foodID").value;
+  let ten = document.getElementById("tenMon").value;
+  let loai = document.getElementById("loai").value;
+  let gia = document.getElementById("giaMon").value;
+  let khuyenMai = document.getElementById("khuyenMai").value;
+  let tinhTrang = document.getElementById("tinhTrang").value;
+  let hinhAnh = document.getElementById("hinhMon").value;
+  let moTa = document.getElementById("moTa").value;
+  return {
+    ma,
+    ten,
+    loai,
+    gia,
+    khuyenMai,
+    tinhTrang,
+    hinhAnh,
+    moTa,
+    tinhGKM: function () {
+      return this.gia * (1 - this.khuyenMai);
+    },
+  };
+};
