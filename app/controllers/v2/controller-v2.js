@@ -12,6 +12,7 @@ export let renderFoodList = (foodArr) => {
                         <td>${tinhTrang}</td>
                         <td>
                         <button onclick="deleteFood(${ma})" class="btn btn-danger">Xóa</button>
+                        <button onclick='editFood(${ma})' class="btn btn-warning">Sửa</button>
                         </td>
                     </tr>`;
     contenHTML = contenHTML + trString;
@@ -41,4 +42,16 @@ export let getDataFrom = () => {
       return this.gia * (1 - this.khuyenMai);
     },
   };
+};
+
+export let showDataFrom = (food) => {
+  let { ma, ten, loai, gia, khuyenMai, hinhMon, moTa, tinhTrang } = food;
+  document.getElementById("foodID").value = ma;
+  document.getElementById("tenMon").value = ten;
+  document.getElementById("loai").value = loai;
+  document.getElementById("giaMon").value = gia;
+  document.getElementById("khuyenMai").value = khuyenMai;
+  document.getElementById("tinhTrang").value = tinhTrang;
+  document.getElementById("hinhMon").value = hinhMon;
+  document.getElementById("moTa").value = moTa;
 };
