@@ -31,6 +31,7 @@ window.addFood = () => {
     .post("/food", food)
     .then((res) => {
       $("#exampleModal").modal("hide");
+      fetchFoodlist();
     })
     .catch((err) => {
       alert("Thêm thất bại");
@@ -57,7 +58,6 @@ window.updateFood = () => {
   https
     .put(`/food/${editArr}`, update)
     .then((res) => {
-      alert("Update thành công");
       $("#exampleModal").modal("hide");
       fetchFoodlist();
     })

@@ -6,8 +6,8 @@ export let renderFoodList = (foodArr) => {
                         <td>${ma}</td>
                         <td>${ten}</td>
                         <td>${loai}</td>
-                        <td>${gia}</td>
-                        <td>${khuyenMai}</td>
+                        <td>${gia} VND</td>
+                        <td>${khuyenMai} %</td>
                         <td>0</td>
                         <td>${tinhTrang}</td>
                         <td>
