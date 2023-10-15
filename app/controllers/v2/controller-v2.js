@@ -44,14 +44,23 @@ export let getDataFrom = () => {
   };
 };
 
+const monChay = "loai1";
+const monMan = "loai2";
+const chay = true;
+
+const tinhTrangCon = "1";
+const tinhTrangHet = "0";
+const conMon = true;
+
 export let showDataFrom = (food) => {
   let { ma, ten, loai, gia, khuyenMai, hinhMon, moTa, tinhTrang } = food;
   document.getElementById("foodID").value = ma;
   document.getElementById("tenMon").value = ten;
-  document.getElementById("loai").value = loai;
+  document.getElementById("loai").value = loai == chay ? monChay : monMan;
   document.getElementById("giaMon").value = gia;
   document.getElementById("khuyenMai").value = khuyenMai;
-  document.getElementById("tinhTrang").value = tinhTrang;
+  document.getElementById("tinhTrang").value =
+    tinhTrang == conMon ? tinhTrangCon : tinhTrangHet;
   document.getElementById("hinhMon").value = hinhMon;
   document.getElementById("moTa").value = moTa;
 };

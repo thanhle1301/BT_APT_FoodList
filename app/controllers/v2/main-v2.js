@@ -37,10 +37,9 @@ window.addFood = () => {
       alert("Thêm thất bại");
     });
 };
-var editArr = null;
+// var editArr = null;
 window.editFood = (id) => {
-  editArr = id;
-  console.log("🚀 ~ file: main-v2.js:42 ~ editArr:", editArr);
+  // editArr = id;
   https
     .get(`/food/${id}`)
     .then((res) => {
@@ -54,9 +53,9 @@ window.editFood = (id) => {
 };
 
 window.updateFood = () => {
-  let update = getDataFrom();
+  let food = getDataFrom();
   https
-    .put(`/food/${editArr}`, update)
+    .put(`/food/${food.ma}`, food)
     .then((res) => {
       $("#exampleModal").modal("hide");
       fetchFoodlist();
@@ -65,3 +64,23 @@ window.updateFood = () => {
       alert("Update thất bại");
     });
 };
+
+function filterByType() {
+  const selectElement = document.getElementById("selLoai");
+  const selectedType = selectElement.value;
+
+  const rows = document.querySelectorAll(".foodTable tbody tr");
+
+  rows.forEach((row) => {
+    const type = row.querySelector("td:nth-child(3)").textContent; // Lấy loại từ cột thứ 3
+
+    if (selectedType === "all" || selectedType === type) {
+      row.style.display = "table-row"; // Hiển thị
+    } else {
+      row.style.display = "none"; // Ẩn
+    }
+  });
+}
+
+// Gọi hàm khi trang web được tải lần đầu
+filterByType();

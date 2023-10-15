@@ -143,11 +143,15 @@
                   >Show</label
                 >
                 <div class="col-sm-10">
-                  <select class="custom-select" id="selLoai">
+                  <select
+                    class="custom-select"
+                    id="selLoai"
+                    onchange="filterByType()"
+                  >
                     <option selected>Chọn loại</option>
                     <option value="all">Tất cả</option>
-                    <option value="loai1">Chay</option>
-                    <option value="loai2">Mặn</option>
+                    <option onclick="hienThiChay()" value="loai1">Chay</option>
+                    <option onclick="hienThiMans()" value="loai2">Mặn</option>
                   </select>
                 </div>
               </div>
